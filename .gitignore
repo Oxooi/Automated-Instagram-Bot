@@ -1,0 +1,6 @@
+.env
+session.json
+img/*
+content.txt
+dalleLink.txt
+__pycache__/
