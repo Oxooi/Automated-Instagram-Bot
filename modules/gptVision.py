@@ -1,16 +1,12 @@
 import base64
 import requests
 
-
 # Function to encode the image
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
 
 def describe_image(image_path, openai_api_key):
-
-    # Path to your image
-    # image_path = "img/38870843-f59c-11ee-9a2a-50c2e81ad7cc.jpg" # This is a Hard-Coded var for tests
 
     # Getting the b64 string
     base64_image = encode_image(image_path)
