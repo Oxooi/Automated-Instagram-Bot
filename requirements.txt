@@ -3,4 +3,3 @@ instagrapi
 python-dotenv
 openai
 uuid
-dotenv
