@@ -4,6 +4,7 @@ import time
 from modules.dall import dalleGen
 from modules.downloadImage import downloadImage
 from modules.gptVision import describe_image
+from modules.insta import upload_image_to_insta
 
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -25,3 +26,6 @@ image_path = downloadImage(image)
 
 # Get the image : title, description & hashtags with GPT-Vision
 image_info = describe_image(image_path, openai_api_key)
+
+# Upload everythings to instagram 
+upload_image_to_insta(image_path, image_info)
