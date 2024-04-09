@@ -3,18 +3,18 @@ import uuid
 import os
 
 
-def downloadImage(image):
+def downloadImage(image: str) -> str:
 
     print("[*] Downloading the image in local path")
 
     # Get the url of the image
-    url_image = image
+    url_image: str = image
 
     # Download the image
-    response = requests.get(url_image)
+    response: str = requests.get(url_image)
 
     # Specify the image location
-    path = f"img/{uuid.uuid1()}.jpg"
+    path: str = f"img/{uuid.uuid1()}.jpg"
 
     # Save the image
     try:

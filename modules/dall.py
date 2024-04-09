@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def dalleGen(client):
+def dalleGen(client: object) -> str:
 
     print("[*] Generating the image with Dall-E 3")
 

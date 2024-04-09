@@ -1,15 +1,17 @@
 import base64
 import requests
 
+
 # Function to encode the image
-def encode_image(image_path):
+def encode_image(image_path: str) -> str:
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
 
-def describe_image(image_path, openai_api_key):
+
+def describe_image(image_path: str, openai_api_key: str) -> str:
 
     # Getting the b64 string
-    base64_image = encode_image(image_path)
+    base64_image: str = encode_image(image_path)
 
     headers = {
         "Content-Type": "application/json",
@@ -36,12 +38,12 @@ def describe_image(image_path, openai_api_key):
         "max_tokens": 300,
     }
 
-    response = requests.post(
+    response: str = requests.post(
         "https://api.openai.com/v1/chat/completions", headers=headers, json=payload
     )
 
     # Convert the response in JSON format
-    json_reponse = response.json()
+    json_reponse: str = response.json()
 
     # Extract the 'content' value
     if json_reponse.get("choices"):  # Vérifie si 'choices' existe
