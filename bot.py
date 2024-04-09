@@ -1,5 +1,4 @@
 import os
-import time
 
 from modules.dall import dalleGen
 from modules.downloadImage import downloadImage
@@ -18,14 +17,20 @@ client = OpenAI(
     api_key=openai_api_key,
 )
 
-# Generate the image with Dall-E
-image = dalleGen(client)
 
-# Download the image in local dir
-image_path = downloadImage(image)
+def main() -> None:
+    # Generate the image with Dall-E
+    image = dalleGen(client)
 
-# Get the image : title, description & hashtags with GPT-Vision
-# image_info = describe_image(image_path, openai_api_key)
+    # Download the image in local dir
+    image_path = downloadImage(image)
 
-# Upload everythings to instagram 
-# upload_image_to_insta(image_path, image_info)
+    # Get the image : title, description & hashtags with GPT-Vision
+    image_info = describe_image(image_path, openai_api_key)
+
+    # Upload everythings to instagram
+    upload_image_to_insta(image_path, image_info)
+
+
+if __name__ == "__main__":
+    main()
