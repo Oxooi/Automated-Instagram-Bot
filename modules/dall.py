@@ -6,9 +6,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-<<<<<<< Updated upstream
-def dalleGen(client):
-=======
 # Function to choose a random variant for the prompt
 def choose_random_variant() -> str:
     variantPrompt: list[str] = [
@@ -28,7 +25,6 @@ def choose_random_variant() -> str:
 
 # Function to generate the image with Dall-E 3
 def dalleGen(client: object) -> str:
->>>>>>> Stashed changes
 
     print("[*] Generating the image with Dall-E 3")
 
