@@ -1,3 +1,4 @@
+import random
 import os
 
 from dotenv import load_dotenv
@@ -5,18 +6,42 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+<<<<<<< Updated upstream
 def dalleGen(client):
+=======
+# Function to choose a random variant for the prompt
+def choose_random_variant() -> str:
+    variantPrompt: list[str] = [
+        "",
+        "Made of electronics",
+        "3d wireframe",
+        "Artificial lighting",
+        "Film noir",
+        "Analog film style, 35mm film style",
+        "Artificial lighting,",
+        "Aerial view",
+        "Pinhole camera style",
+    ]
+
+    return random.choice(variantPrompt)
+
+
+# Function to generate the image with Dall-E 3
+def dalleGen(client: object) -> str:
+>>>>>>> Stashed changes
 
     print("[*] Generating the image with Dall-E 3")
 
-    prompt = os.environ.get("DALLE_PROMPT")
-    size = os.environ.get("DALLE_SIZE")
-    quality = os.environ.get("DALLE_QUALITY")
-    model = os.environ.get("DALLE_MODEL")
+    prompt: str = os.environ.get("DALLE_PROMPT")
+    size: str = os.environ.get("DALLE_SIZE")
+    quality: str = os.environ.get("DALLE_QUALITY")
+    model: str = os.environ.get("DALLE_MODEL")
+
+    variantPrompt: str = choose_random_variant()
 
     response = client.images.generate(
         model=model,
-        prompt=prompt,
+        prompt=f"{prompt}{variantPrompt}",
         size=size,
         quality=quality,
         n=1,
