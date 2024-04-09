@@ -35,7 +35,7 @@ def dalleGen(client: object) -> str:
 
     variantPrompt: str = choose_random_variant()
 
-    response = client.images.generate(
+    response: object = client.images.generate(
         model=model,
         prompt=f"{prompt}{variantPrompt}",
         size=size,
@@ -44,7 +44,7 @@ def dalleGen(client: object) -> str:
     )
 
     try:
-        image_url = response.data[0].url
+        image_url: str = response.data[0].url
     except KeyError:
         print("[!] An error occurred while generating the image")
         return None

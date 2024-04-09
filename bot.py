@@ -25,7 +25,7 @@ image = dalleGen(client)
 image_path = downloadImage(image)
 
 # Get the image : title, description & hashtags with GPT-Vision
-image_info = describe_image(image_path, openai_api_key)
+# image_info = describe_image(image_path, openai_api_key)
 
 # Upload everythings to instagram 
-upload_image_to_insta(image_path, image_info)
+# upload_image_to_insta(image_path, image_info)
