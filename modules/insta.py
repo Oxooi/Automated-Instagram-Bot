@@ -19,10 +19,10 @@ def upload_image_to_insta(image: str, info: str) -> None:
     ACCOUNT_PASSWORD = os.environ.get("INSTA_ACCOUNT_PASSWORD")
 
     cl: object = Client(request_timeout=7)
-    # cl.load_settings("session.json")
+    cl.load_settings("session.json")
     cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
-    cl.dump_settings("session.json")
-    # cl.get_timeline_feed()  # check session
+    # cl.dump_settings("session.json")
+    cl.get_timeline_feed()  # check session
     cl.delay_range = [1, 3]
 
     # Upload the media
@@ -36,3 +36,5 @@ def upload_image_to_insta(image: str, info: str) -> None:
         print("[*] Image uploaded & Post created ")
     except Exception as e:
         logger.error(f"Failed to upload photo: {e}")
+
+# upload_image_to_insta("uwuu", "uwu")

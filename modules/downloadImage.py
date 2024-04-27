@@ -1,9 +1,10 @@
 import requests
 import uuid
 import os
+from modules.drawImage import draw_text_on_image
 
 
-def downloadImage(image: str) -> str:
+def downloadImage(image: str, variantPrompt: str) -> str:
 
     print("[*] Downloading the image in local path")
 
@@ -28,5 +29,7 @@ def downloadImage(image: str) -> str:
             file.write(response.content)
 
     print(f"[*] The image has been saved as : {path}")
+
+    draw_text_on_image(path, variantPrompt)
 
     return path

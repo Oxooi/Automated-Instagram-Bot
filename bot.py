@@ -20,10 +20,10 @@ client = OpenAI(
 
 def main() -> None:
     # Generate the image with Dall-E
-    image = dalleGen(client)
+    image, variantPrompt = dalleGen(client)
 
     # Download the image in local dir
-    image_path = downloadImage(image)
+    image_path = downloadImage(image, variantPrompt)
 
     # Get the image : title, description & hashtags with GPT-Vision
     image_info = describe_image(image_path, openai_api_key)

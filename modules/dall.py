@@ -60,4 +60,5 @@ def dalleGen(client: object) -> str:
         with open("dalleLink.txt", "x") as fh:
             fh.write(image_url)
 
-    return image_url
+    return image_url, variantPrompt
+    
