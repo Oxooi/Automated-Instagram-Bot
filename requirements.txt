@@ -3,3 +3,4 @@ instagrapi
 python-dotenv
 openai
 uuid
+discord.py
