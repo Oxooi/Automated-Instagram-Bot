@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def upload_image_to_insta(image: str, info: str) -> None:
+def upload_image_to_insta(image: str, info: str) -> str:
 
     # Setup logging
     logging.basicConfig(level=logging.INFO)
@@ -34,7 +34,13 @@ def upload_image_to_insta(image: str, info: str) -> None:
         )
         print(media.model_dump())
         print("[*] Image uploaded & Post created ")
+
+        # We get the post url
+        media_link = f"https://www.instagram.com/p/{media.code}/"
+
+        return media_link
     except Exception as e:
         logger.error(f"Failed to upload photo: {e}")
+
 
 # upload_image_to_insta("uwuu", "uwu")
