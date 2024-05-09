@@ -16,6 +16,9 @@
 
 - `insta.py`: A script designed for interacting with Instagram through the `instagrapi` library. It handles authentication and provides functionality to perform actions on Instagram. It's not directly integrated with other scripts but can be used for social media automation.
 
+- `discordBot.py` : A discord bot that sends a message in a specific channel with all the details of the post sent to Instagram
+it uses the library: `discord.py`
+
 ## Installation
 
 To run these scripts, you will need Python 3.6 or later. Some scripts require external libraries which can be installed via pip:
@@ -49,6 +52,9 @@ Make sure to configure the necessary environment variables before running the sc
 | `INSTA_ACCOUNT_USERNAME` | This is your instagram username : *https://www.instagram.com/yourusername/* |
 | `INSTA_ACCOUNT_PASSWORD` | This is your instagram password |
 | `INSTA_ACCOUNT_2FA_CODE` | If you using a 2FA application |
+| **Discord Settings** | -- |
+| `DISCORD_TOKEN` | The discord bot token |
+| `CHANNEL_ID` | The channel ID where you want to receive messages |
 
 ## Contributing
 
